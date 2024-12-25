@@ -85,7 +85,7 @@
                         "name": "agentpool",
                         "count": "[parameters('agentCount')]",
                         "vmSize": "[parameters('agentVMSize')]",
-                        "type": "VirtualMachineScaleSets"  // Changed to VMSS
+                        "type": "VirtualMachineScaleSets"
                     }
                 ]
             },
