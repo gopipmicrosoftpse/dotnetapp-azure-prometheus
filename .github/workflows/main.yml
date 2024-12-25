@@ -23,6 +23,10 @@ env:
   KUBERNETESAPI: "apps/v1"
   NAMESPACE: "azuremetricsdotnet" # Set namespace *
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
   build:
     name: Build and push image to container registry
