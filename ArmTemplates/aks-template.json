@@ -82,6 +82,12 @@
                 },
                 "agentPoolProfiles": [
                     {
+                        "name": "agentpool",
+                        "count": "[parameters('agentCount')]",
+                        "vmSize": "[parameters('agentVMSize')]",
+                        "type": "VirtualMachineScaleSets"
+                    },
+                    {
                         "name": "systempool",
                         "count": 1,
                         "vmSize": "[parameters('agentVMSize')]",
@@ -93,12 +99,6 @@
                         "count": "[parameters('agentCount')]",
                         "vmSize": "[parameters('agentVMSize')]",
                         "mode": "User", 
-                        "type": "VirtualMachineScaleSets"
-                    },
-                    {
-                        "name": "agentpool",
-                        "count": "[parameters('agentCount')]",
-                        "vmSize": "[parameters('agentVMSize')]",
                         "type": "VirtualMachineScaleSets"
                     }
                 ]
