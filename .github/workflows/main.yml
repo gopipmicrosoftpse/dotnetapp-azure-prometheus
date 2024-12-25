@@ -75,13 +75,15 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       # login to azure
-      - name: Login to Azure
+      - name: Login to Azure using OIDC
         uses: azure/login@v1
         with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          client-id: '919eee9c-7ca8-467b-8636-81da2718ade5'
+          tenant-id: '72f988bf-86f1-41af-91ab-2d7cd011db47'
+          subscription-id: 'b25d4352-18ea-4ab5-ba27-6213538d0013'
 
       - name: Get AKS Credentials
         id: getContext
