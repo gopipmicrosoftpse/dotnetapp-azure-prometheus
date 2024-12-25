@@ -94,7 +94,7 @@
                         "vmSize": "[parameters('agentVMSize')]",
                         "mode": "User", 
                         "type": "VirtualMachineScaleSets"
-                    }
+                    },
                     {
                         "name": "agentpool",
                         "count": "[parameters('agentCount')]",
