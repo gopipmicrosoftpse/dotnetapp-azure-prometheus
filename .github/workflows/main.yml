@@ -1,4 +1,4 @@
-name: Build and Deploy to AKS Cluster test
+name: Build and Deploy to AKS Cluster test1
 on:
   push:
     branches:
