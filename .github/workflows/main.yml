@@ -40,16 +40,16 @@ jobs:
       - name: Login to Azure using OIDC
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZURE_CLIENT_ID }}
-          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          client-id: '919eee9c-7ca8-467b-8636-81da2718ade5'
+          tenant-id: '72f988bf-86f1-41af-91ab-2d7cd011db47'
+          subscription-id: 'b25d4352-18ea-4ab5-ba27-6213538d0013'
 
       - name: Create AKS Cluster
         uses: azure/arm-deploy@v1
         id: deploy
         with:
           scope: resourcegroup
-          subscriptionId: ${{ secrets.AZURE_CREDENTIALS.subscriptionId }}
+          subscriptionId: 'b25d4352-18ea-4ab5-ba27-6213538d0013'
           resourceGroupName: ${{ env.RESOURCEGROUPNAME }}
           template: ./ArmTemplates/aks-template.json
           parameters: clusterName="${{ env.CLUSTERNAME }}" appInsightsLocation="${{ env.APPINSIGHTSLOCATION }}" clusterLocation="${{ env.CLUSTERLOCATION }}" agentCount="${{ env.AGENTCOUNT }}" agentVMSize="${{ env.AGENTVMSIZE }}" kubernetesVersion="${{ env.KUBERNETESVERSION }}" omsLocation="${{ env.OMSLOCATION }}" omsWorkspaceName="${{ env.OMSWORKSPACENAME }}" httpApplicationRoutingEnabled="${{ env.HTTPSAPPLICATIONROUTINGENABLED }}"  dnsPrefix="${{ env.CLUSTERNAME }}"
